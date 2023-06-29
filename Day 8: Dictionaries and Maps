@@ -1,0 +1,34 @@
+function processData(input) {
+    //Enter your code here
+    input = input.split("\n");
+    var n = parseInt(input[0]);
+    var phonebook = [];
+    for(var i =0; i<n; i++)
+    {
+        var str = input[i+1];
+        str = str.split(" ");
+        phonebook[str[0]] = str[1];
+    }
+    for(var j = n+1; j<input.length; j++)
+    {
+        var num = phonebook[input[j]];
+        if(num !== undefined)
+        {
+            console.log(input[j]+"="+num);
+        }
+        else{
+            console.log("Not found");
+        }
+    }
+} 
+
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+   processData(_input);
+});
