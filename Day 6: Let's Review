@@ -1,0 +1,35 @@
+function processData(input) {
+    //Enter your code here
+    const message = input.split("\n");
+    var n = parseInt(message[0]);
+    for(var i= 0; i< n; i++)
+    {
+        var m = message[i+1];
+        var len = m.length;
+        var arr = m.split("");
+        var str1 = "";
+        var str2 = "";
+        for(var j=0; j<len; j++)
+        {
+            if(j%2 == 0)
+            {
+                str1 = str1 + arr[j];
+            }
+            else{
+                str2 = str2 + arr[j];
+            }
+        }
+        console.log(str1 + " " + str2);
+    }
+} 
+
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+   processData(_input);
+});
