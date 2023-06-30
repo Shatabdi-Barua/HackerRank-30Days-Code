@@ -1,0 +1,9 @@
+function main() {
+    const n = parseInt(readLine()).toString(2);
+    var str = n.split('0'); //each element represents a consecutive sequence of '1's.
+    var cons_one = str.map(function(el){ return el.length }).reduce(function(a,b){ if(a>b) return a; else return b});
+    console.log(cons_one);
+}
+// Map each element in the splits array to its length using .map(function(elem){return elem.length;}).
+// This transforms the array of substrings into an array of their respective lengths.
+// reduce function calculates the consecutive 1's 
